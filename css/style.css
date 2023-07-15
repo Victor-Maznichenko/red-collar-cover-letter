@@ -32,6 +32,8 @@ h6 {
   padding: 40px;
   position: relative;
   overflow-x: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 body {
@@ -53,6 +55,11 @@ body {
 .text-2 {
   font: 400 18px/24px "TT Commons", sans-serif;
   letter-spacing: -0.18px;
+}
+
+.link {
+  color: darkcyan;
+  text-decoration: underline;
 }
 
 .logo {
@@ -221,7 +228,7 @@ body {
 
 .main__info {
   padding-top: 18px;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 98px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
