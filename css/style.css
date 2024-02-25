@@ -1,6 +1,7 @@
 @font-face {
   font-family: "TT Commons";
   font-style: normal;
+  font-display: swap;
   font-weight: 400;
   src: url("../fonts/TTCommons_Regular.woff2") format("woff2"), url("../fonts/TTCommons_Regular.woff") format("woff");
 }
@@ -8,6 +9,7 @@
 @font-face {
   font-family: "Redcollar";
   font-style: normal;
+  font-display: swap;
   font-weight: 400;
   src: url("../fonts/Redcollar.woff2") format("woff2"), url("../fonts/Redcollar.woff") format("woff");
 }
@@ -68,11 +70,6 @@ body {
   right: 40px;
 }
 
-.logo svg {
-  width: 240px;
-  height: 24px;
-}
-
 .person {
   overflow: hidden;
   min-width: 325px;
@@ -88,7 +85,7 @@ body {
 }
 
 .person__info {
-  background: #F51B1B;
+  background: #f51b1b;
   margin-top: -20px;
   border-radius: 24px 24px 0 0;
   padding: 40px 23px;
@@ -143,6 +140,18 @@ body {
 .info-table {
   border: 1px solid white;
   padding: 47px 50px 47px 27px;
+  position: relative;
+}
+
+.info-table::before {
+  background: black;
+  content: url("../images/arrow.svg");
+  position: absolute;
+  left: 60px;
+  height: 20px;
+  width: 60px;
+  z-index: 5;
+  top: -1px;
 }
 
 .info-table__block {
@@ -211,6 +220,7 @@ body {
 .main__person {
   margin-right: 30px;
   min-height: calc(100vh - 80px);
+  max-width: 320px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,6 +249,7 @@ body {
 }
 
 .main__info-text {
+  max-width: 690px;
   margin-bottom: 32px;
 }
 
@@ -260,7 +271,7 @@ body {
   }
 
   body {
-    font-size: 16px;
+    font: 18px/22px "TT Commons";
     line-height: 20px;
     letter-spacing: -0.32px;
   }
@@ -272,8 +283,12 @@ body {
   }
 
   .logo svg {
-    height: 22px;
-    width: 234px;
+    height: 20px;
+    width: 200px;
+  }
+
+  .info-table::before {
+    left: calc(50% - 30px);
   }
 
   .info-table__block {
@@ -308,6 +323,7 @@ body {
   .main__person,
   .main__info {
     min-height: auto;
+    max-width: 100%;
     width: 100%;
   }
 
@@ -337,7 +353,7 @@ body {
   }
 
   .wrapper {
-    padding: 90px 20px 60px 20px;
+    padding: 40px 20px 60px 20px;
   }
 
   .logo {
@@ -352,6 +368,11 @@ body {
 }
 
 @media (max-width: 680px) {
+  body {
+    font: 16px/20px "TT Commons";
+    letter-spacing: 0.01em;
+  }
+
   .main__person {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -401,6 +422,10 @@ body {
     gap: 15px;
   }
 
+  .wrapper {
+    padding: 90px 20px 60px;
+  }
+
   .person {
     min-width: auto;
   }
@@ -412,19 +437,24 @@ body {
 
 @media (max-width: 359px) {
   .wrapper {
-    padding: 90px 10px 60px 10px;
+    padding: 90px 10px 60px;
   }
 
   .info-table {
     padding: 40px 7px 30px 7px;
   }
 
-  .text-2 {
-    font-size: 15px;
+  .person__info {
+    padding: 24px 16px 40px;
   }
 
-  body {
-    font-size: 16px;
+  .person__contacts-item img {
+    width: 19px;
+    height: 19px;
+  }
+
+  .main__info {
+    padding-top: 0;
   }
 
 @supports (-webkit-appearance:none) {
