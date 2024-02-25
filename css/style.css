@@ -151,7 +151,7 @@ body {
   height: 20px;
   width: 60px;
   z-index: 5;
-  top: -1px;
+  top: -2px;
 }
 
 .info-table__block {
